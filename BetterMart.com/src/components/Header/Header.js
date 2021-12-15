@@ -41,6 +41,8 @@ import {
   Dropdown,
 } from "react-bootstrap";
 
+import logo from "../../Images/logo.jpg";
+
 import "./Header.css";
 axios.defaults.headers.post["Access-Control-Allow-Origin"] = "*";
 
@@ -52,7 +54,7 @@ function Header() {
   const [filter, setFilter] = useState("");
   const [nameResults, setNameResults] = useState([]);
 
-  const apiUrl = "http://localhost:34365/api/ProductEmpty/Searching?search=";
+  const apiUrl = "http://localhost:34365/api/Product/Searching?search=";
 
   const loggedIn = useSelector((state) => state.loggedIn);
 
@@ -122,12 +124,12 @@ function Header() {
               alignItems: "center",
             }}
           >
-            <img
+            {/* <img
               className="Header__header__logo"
               src="https://www.graphicsprings.com/filestorage/stencils/1cf0e62090ebd950855b702c81587979.png?width=500&height=500"
               alt=""
-            />
-            <p>BetterMart</p>
+            /> <p>BetterMart</p>*/}
+            <img className="Header__header__logo" src={logo} alt="" />
           </Link>
         </>
 

@@ -39,13 +39,16 @@ function Checkout(props) {
 
   ///////////////////// USE EFFECT ///////////////////////////
   useEffect(() => {
+    if (userDetails.Id === undefined) {
+      navigate("/BuyerLogin");
+    }
     axios
       .get(
-        "http://localhost:34365/api/Cart/GetCartDetailsById?BuyerId=" +
+        "http://localhost:34365/api/Cart/GetCartDetailsByBuyerId?BuyerId=" +
           userDetails.Id.toString()
       )
       .then((results) => {
-        console.log(results);
+        console.log("cart Details:", results);
         setCartDetails(results.data);
       });
   }, []);
@@ -77,12 +80,80 @@ function Checkout(props) {
   };
 
   const submitHandler = (e) => {
-    console.log("chName:", chName);
-    console.log("cardNum:", cardNum);
-    console.log("cardType:", cardType);
-    console.log("bank:", bank);
-    console.log("expiry:", expiry);
-    console.log("cvv:", cvv);
+    if (
+      chName.length === 0 ||
+      cardNum.length === 0 ||
+      cardType.length === 0 ||
+      bank.length === 0 ||
+      expiry.length === 0 ||
+      cvv.length === 0
+    ) {
+      alert("Please Enter all card Details before placing order!");
+    } else {
+      const [mm, yy] = expiry.split("/");
+
+      if (chName.length < 3) {
+        alert("Please enter a valid name!");
+        return;
+      } else if (cardNum.length < 16) {
+        alert("Please enter a valid card number!");
+        return;
+      } else if (mm <= 0 || mm > 12) {
+        alert("Please enter a expiry Month!");
+        return;
+      } else if (
+        yy < parseInt(new Date().getFullYear().toString().substr(-2))
+      ) {
+        alert("Please enter a expiry Year!");
+        return;
+      } else {
+        console.log("userDetails:", userDetails);
+        let temparr = [];
+        cartDetails.forEach((product) => {
+          let tempProd = {
+            // "productId": 0,
+            // "buyerId": 0,
+            // "productName": "string",
+            // "productPrice": 0,
+            // "productQuantity": 0,
+            // "productImage": "string",
+            // "deliveryCharge": 0,
+            // "deliveryTime": "string",
+            buyerId: product.buyerId,
+            productId: product.productId,
+            productName: product.productName,
+            productPrice: product.productPrice,
+            productQuantity: product.productQuantity,
+            productImage: product.productImage,
+            deliveryTime: product.deliveryTime,
+            deliveryCharge: product.deliveryCharge,
+          };
+          temparr.push(tempProd);
+          // console.log("cartDetails.buyerId:", product.buyerId);
+          // console.log("cartDetails.productId:", product.productId);
+          // console.log("cartDetails.productPrice:", product.productPrice);
+          // console.log("cartDetails.productQuantity:", product.productQuantity);
+          // console.log("cartDetails.productImage:", product.productImage);
+          // console.log("cartDetails.deliveryTime:", product.deliveryTime);
+          // console.log("cartDetails.deliveryCharge:", product.deliveryCharge);
+        });
+        console.log("temparr:", temparr);
+
+        axios
+          .post("http://localhost:34365/api/Order/OrderTheProduct", temparr)
+          .then((result) => {
+            console.log(result);
+            if (result.data.status === "Success") {
+              alert("Your order has been placed successfully!");
+              axios.delete(
+                "http://localhost:34365/api/Cart/DeleteFromCartByBuyerId?BuyerId=" +
+                  userDetails.Id
+              );
+              navigate("/Home");
+            }
+          });
+      }
+    }
   };
 
   let subtotal = 0;
@@ -121,6 +192,7 @@ function Checkout(props) {
                     <DropdownButton
                       variant="outline-secondary"
                       title="Card Type"
+                      value={cardType}
                       id="input-group-dropdown-1"
                     >
                       <Dropdown.Item name="cardType" onClick={changeHandler}>
@@ -180,7 +252,7 @@ function Checkout(props) {
                     name="cvv"
                     onChange={changeHandler}
                     maxLength="3"
-                    type="text"
+                    type="password"
                   />
                 </Col>
               </Row>

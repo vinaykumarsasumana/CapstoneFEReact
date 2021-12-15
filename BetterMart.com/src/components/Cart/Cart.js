@@ -27,7 +27,7 @@ function Cart(props) {
     if (userDetails.Id !== undefined) {
       axios
         .get(
-          "http://localhost:34365/api/Cart/GetCartDetailsById?BuyerId=" +
+          "http://localhost:34365/api/Cart/GetCartDetailsByBuyerId?BuyerId=" +
             userDetails.Id.toString()
         )
         .then((results) => {

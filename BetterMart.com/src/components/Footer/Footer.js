@@ -7,6 +7,8 @@ import React, { useState, useEffect } from "react";
 
 import { Link } from "react-router-dom";
 
+import logo from "../../Images/logo.jpg";
+
 import "./Footer.css";
 
 function Footer() {
@@ -32,9 +34,11 @@ function Footer() {
     if (email.length === 0 && !email.includes("@")) {
       alert("Please enter a valid email.");
       return;
+    } else {
+      alert("Thank you for subscribing to our newsletter.");
+      console.log("email:", email);
+      setEmail("");
     }
-    console.log("email:", email);
-    setEmail("");
   };
 
   return (
@@ -48,18 +52,19 @@ function Footer() {
               alignItems: "center",
             }}
           >
-            <img
+            {/* <img
               className="Footer__columns__column__logo"
               src="https://www.graphicsprings.com/filestorage/stencils/1cf0e62090ebd950855b702c81587979.png?width=500&height=500"
               alt=""
             />
-            <p>BetterMart</p>
+            <p>BetterMart</p> */}
+            <img className="Footer__columns__column__logo" src={logo} alt="" />
           </div>
           <p>
             Laborum aliqua excepteur elit anim reprehenderit amet aliquip
             officia.
           </p>
-          <p>Contact Number: 1800-101-4242</p>
+          <p style={{ fontWeight: "Bold" }}>Contact Number: 1800-101-4242</p>
         </div>
         <div className="Footer__columns__column">
           <p style={{ fontWeight: "bold" }}> About Us</p>

@@ -1,57 +1,64 @@
-import React, { Component } from "react";
+import React, { Component, useState, useEffect } from "react";
 // import { Table } from "react-bootstrap";
 // import {  Table } from "semantic-ui-react";
 // import ordersData from "./CartDetails.json";
-import ordersData from "../../Data/CartDetails";
+import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+// import ordersData from "../../Data/CartDetails";
 import OrdersTable from "./OrdersTable";
 
-class MyOrders extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { data: [] };
-  }
-  // function Wishlist(props) {
-  // console.log(data);
-  // componentDidMount() {
-  //   this.setState({ data: JsonData });
-  //   console.log(this.data);
+function MyOrders(props) {
+  const [ordersData, setOrdersData] = useState([]);
 
-  //   debugger;
-  //   axios
-  //     .get("http://localhost:16711/api/Student/Studentdetails")
-  //     .then((response) => {
-  //       this.setState({ business: response.data });
-  //       // debugger;
-  //     })
-  //     .catch(function (error) {
-  //       console.log(error);
-  //     });
-  // }
+  const userDetails = useSelector((state) => state.userDetails);
 
-  tabRow = () => {
-    return ordersData.map(function (object, i) {
-      return <OrdersTable obj={object} key={i} />;
-    });
-  };
+  const navigate = useNavigate();
 
-  render() {
-    return (
-      <div style={{ backgroundColor: "var(--c5l)" }}>
-        <h4 style={{ backgroundColor: "var(--c2d)" }}>Orders</h4>
+  useEffect(() => {
+    if (userDetails.Id === undefined) {
+      navigate("/BuyerLogin");
+    }
+    axios
+      .get(
+        "http://localhost:34365/api/Order/GetOrderDetailsByBuyerId?BuyerId=" +
+          userDetails.Id.toString()
+      )
+      .then((results) => {
+        console.log("Order Details:", results);
+        setOrdersData(results.data);
+      });
+  }, []);
+  const tabRow = ordersData.map(function (object, i) {
+    return <OrdersTable obj={object} key={i} />;
+  });
+
+  return (
+    <div style={{ backgroundColor: "var(--c5l)", minHeight: "90vh" }}>
+      <h4 style={{ backgroundColor: "var(--c2d)", color: "white" }}>Orders</h4>
+      {ordersData.length != 0 ? (
         <table className="table table-bordered">
           <thead className="thead-dark">
+            {/* <td>{this.props.obj.orderId}</td>
+        <td>{this.props.obj.productName}</td>
+        <td>{"Rs. " + this.props.obj.productPrice}</td>
+        <td>{this.props.obj.productQuantity}</td>
+        <td>{this.props.obj.deliverCharge}</td> */}
             <tr>
-              <th>pictures</th>
+              <th>Order ID</th>
               <th>Product Name</th>
-              <th>Product Brand</th>
               <th>Price</th>
-              <th>Remove</th>
+              <th>Quantity</th>
+              <th>Delivery Charges</th>
             </tr>
           </thead>
-          <tbody>{this.tabRow()}</tbody>
+          <tbody>{tabRow}</tbody>
         </table>
-      </div>
-    );
-  }
+      ) : (
+        "No Orders."
+      )}
+    </div>
+  );
 }
+
 export default MyOrders;

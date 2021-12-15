@@ -15,6 +15,7 @@
 }
 .Header__header__logo {
   height: 60px;
+  margin-left: 2rem;
 }
 .Header__header__nav {
   display: flex;
@@ -66,7 +67,7 @@
 }
 #Header__searchbar > input {
   border: none;
-  width: 30rem;
+  width: 20rem;
 }
 #header__nav__unstyled {
   font-weight: bold;
@@ -76,10 +77,14 @@
   z-index: 5;
   position: absolute;
   top: 3rem;
-  right: 16em;
+  right: 19em;
   background-color: var(--c5l);
-  width: 35%;
+  width: 24%;
   text-align: left;
+  padding: 0.5rem 1rem;
+  border: 1px solid rgb(221, 221, 221);
+  max-height: 200px;
+  overflow-y: scroll;
 }
 
 @media screen and (max-width: 450px) {

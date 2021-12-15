@@ -26,7 +26,10 @@ function CartCard(props) {
 
     if (status) {
       axios
-        .delete("http://localhost:34365/api/CartTables/" + props.item.cartId)
+        .delete(
+          "http://localhost:34365/api/Cart/DeleteFromCartByProductId?ProductId=" +
+            props.item.productId
+        )
         .then((result) => {
           if (result.status === 204) {
             props.forceUpdate();

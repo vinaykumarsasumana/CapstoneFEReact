@@ -40,11 +40,11 @@ function ProductPage(props) {
   useEffect(() => {
     axios
       .get(
-        "http://localhost:34365/api/ProductEmpty/GetProductDetailsByProductName?ProductName=" +
+        "http://localhost:34365/api/Product/GetProductDetailsByProductName?ProductName=" +
           product
       )
       .then((result) => {
-        // console.log(result);
+        console.log(result);
         setProductDetails(result.data[0]);
       });
   }, []);
@@ -90,7 +90,10 @@ function ProductPage(props) {
       productId: productDetails.productId,
       productName: productDetails.productName,
       productPrice: productDetails.productPrice,
-      oneImage: "https://picsum.photos/200?random=2",
+      oneImage: "https://picsum.photos/200?random=1",
+      deliveryCharge: productDetails.deliveryCharge,
+      deliveryTime: productDetails.deliveryTime,
+      productQuantity: 1,
     };
     console.log("itemDetails:", itemDetails);
     axios

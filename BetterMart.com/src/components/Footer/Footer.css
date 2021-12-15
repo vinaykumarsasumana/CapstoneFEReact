@@ -11,6 +11,8 @@
 }
 .Footer__columns__column__logo {
   height: 60px;
+  border-radius: 10px;
+  margin-bottom: 1rem;
 }
 #Footer__logo {
   max-width: 20%;

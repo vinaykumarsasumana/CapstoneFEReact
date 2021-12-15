@@ -2,7 +2,8 @@
   background-color: var(--c2d);
 }
 .table {
-  width: 100%;
+  width: 90%;
+  border: 2px solid black;
   text-align: center;
   margin-bottom: 0;
 }

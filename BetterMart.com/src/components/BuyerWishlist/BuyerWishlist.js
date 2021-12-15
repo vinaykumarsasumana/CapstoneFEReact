@@ -14,7 +14,10 @@ function Wishlist(props) {
 
   useEffect(() => {
     axios
-      .get("http://localhost:34365/api/Wishlists/" + userDetails.Id)
+      .get(
+        "http://localhost:34365/api/Wishlists/GetWishlistDetailsByBuyerId?BuyerId=" +
+          userDetails.Id
+      )
       .then((result) => {
         console.log(result);
         // if (result.data.length === 1) {

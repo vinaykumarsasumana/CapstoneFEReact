@@ -24,7 +24,7 @@ function CategoryPage(props) {
   useEffect(() => {
     axios
       .get(
-        "http://localhost:34365/api/ProductEmpty/Sorting?SubType=" +
+        "http://localhost:34365/api/Product/Sorting?SubType=" +
           category +
           "&sortOrder=" +
           filter
