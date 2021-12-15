@@ -1,0 +1,64 @@
+[
+  {
+    "pictures": [
+      {
+        "id": 0,
+        "url": "https://picsum.photos/200?random=1"
+      },
+      {
+        "id": 1,
+        "url": "https://picsum.photos/200?random=2"
+      },
+      {
+        "id": 2,
+        "url": "https://picsum.photos/200?random=3"
+      },
+      {
+        "id": 3,
+        "url": "https://picsum.photos/200?random=4"
+      }
+    ],
+    "name": "Product Name 1",
+    "brand": "Brand Name 1",
+    "type": "Product Type A",
+    "origin": "XYZabad",
+    "currency": "Rs",
+    "price": 123,
+    "description": "Proident cillum mollit nisi ad duis eiusmod labore. Laborum labore fugiat ea nisi elit do ut consequat velit incididunt labore Lorem elit. Deserunt veniam enim ipsum commodo aliqua nisi. Ullamco nulla aute officia velit labore. Labore elit quis sint eiusmod. Do ad amet in anim veniam qui nostrud. ",
+    "shipping": 234,
+    "seller email": "siddharthkaranchery.official@gmail.com",
+    "quantity": 3,
+    "shippingOptions": "Same Day"
+  },
+  {
+    "pictures": [
+      {
+        "id": 0,
+        "url": "https://picsum.photos/200?random=5"
+      },
+      {
+        "id": 1,
+        "url": "https://picsum.photos/200?random=6"
+      },
+      {
+        "id": 2,
+        "url": "https://picsum.photos/200?random=7"
+      },
+      {
+        "id": 3,
+        "url": "https://picsum.photos/200?random=8"
+      }
+    ],
+    "name": "Product Name 2",
+    "brand": "Brand Name 2",
+    "type": "Product Type B",
+    "origin": "ABCabad",
+    "currency": "Rs",
+    "price": 345,
+    "description": "Proident cillum mollit nisi ad duis eiusmod labore. Laborum labore fugiat ea nisi elit do ut consequat velit incididunt labore Lorem elit. Deserunt veniam enim ipsum commodo aliqua nisi. Ullamco nulla aute officia velit labore. Labore elit quis sint eiusmod. Do ad amet in anim veniam qui nostrud. ",
+    "shipping": 456,
+    "seller email": "siddharthkaranchery.official@gmail.com",
+    "quantity": 1,
+    "shippingOptions": "3-5 Days"
+  }
+]

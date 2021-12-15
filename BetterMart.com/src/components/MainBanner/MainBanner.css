@@ -1,0 +1,12 @@
+.MainBanner {
+  min-height: 50vh;
+  background-color: var(--c5n);
+  display: flex;
+  flex-direction: column;
+}
+.MainBanner__columns {
+  margin: 2rem;
+}
+.MainBanner__columns__column__img {
+  height: 300px;
+}

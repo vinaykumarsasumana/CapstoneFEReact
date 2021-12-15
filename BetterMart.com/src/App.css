@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+.App {
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --c1d: #171729;
+  --c2d: #51aca5;
+  --c3d: #459d89;
+  --c4d: #2e7d56;
+  --c5d: #c9c9c9;
+  --c1n: #182628;
+  --c2n: #65ccb8;
+  --c3n: #57ba98;
+  --c4n: #3b945e;
+  --c5n: #f2f2f2;
+  --c1l: #747f7a;
+  --c2l: #8cdcaf;
+  --c3l: #96d8a5;
+  --c4l: #88c186;
+  --c5l: #fafafa;
+}
+
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+}

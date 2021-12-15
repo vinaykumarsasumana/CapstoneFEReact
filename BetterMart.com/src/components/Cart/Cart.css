@@ -1,0 +1,33 @@
+.Cart {
+  display: flex;
+  min-height: 90vh;
+  flex-direction: row;
+  background-color: var(--c5l);
+  align-items: flex-start;
+  justify-content: space-evenly;
+  padding: 1rem 2rem;
+}
+.Cart__left {
+  /* border: 1px solid black; */
+  width: 70%;
+}
+.Cart__right {
+  border: 1px solid black;
+  width: 28%;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+}
+.Cart__right__total {
+  width: 100%;
+  padding: 0.5rem;
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
+  font-weight: bold;
+}
+.Cart__card__input {
+  width: 20%;
+  text-align: center;
+}
+.Cart__card__name {
+  width: 10rem;
+}

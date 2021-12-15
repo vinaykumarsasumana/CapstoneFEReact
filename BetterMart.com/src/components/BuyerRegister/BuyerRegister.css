@@ -1,0 +1,109 @@
+.BuyerRegister {
+  padding: 2rem;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.BuyerRegister__ele1,
+.BuyerRegister__ele2 {
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.BuyerRegister__ele1 {
+  width: 50%;
+}
+.BuyerRegister__ele2 {
+  width: 40%;
+  margin-left: -10rem;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid var(--c2n);
+  border-radius: 15px;
+  padding: 1rem;
+}
+.BuyerRegister__ele1__img {
+  width: 500px;
+  height: 500px;
+}
+.BuyerRegister__ele2__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+
+  min-width: 95%;
+}
+.BuyerRegister__ele2__form__input {
+  width: 99%;
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  padding: 0.1rem 0.3rem;
+  border: 1px solid grey;
+  border-radius: 3px;
+}
+.BuyerRegister__ele2__form__button {
+  background-color: var(--c2n);
+  padding: 0.2rem 1rem;
+  margin: 0.5rem 0;
+  border-radius: 5px;
+}
+.BuyerRegister__ele2__social {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+
+  width: 30%;
+}
+.BuyerRegister__ele2__social__icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: -0.8rem;
+  /* width: 40%; */
+}
+/*//////////////////////////////////////*/
+.BuyerRegister__image {
+  /* float: left; */
+}
+
+.BuyerRegister__register__image {
+  margin-top: 40px;
+  height: 450px !important;
+  width: 470px !important;
+}
+.BuyerRegister__register-form {
+  margin-top: 50px;
+  width: 40vw !important;
+  /* float: right; */
+}
+
+.BuyerRegister__form-control-lg {
+  width: 85% !important;
+  padding: 10px;
+}
+.BuyerRegister__div {
+  align-items: center;
+  margin-right: 70px;
+}
+.BuyerRegister__h6__icon {
+  align-items: center;
+  margin-right: 70px;
+}
+.BuyerRegister__btn__register {
+  margin-right: 50px;
+  background-color: var(--c2n);
+  border-radius: 5px;
+  padding: 5px 15px;
+  color: white;
+  font-weight: normal;
+  border: none;
+}
+.BuyerRegister__btn__register:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}

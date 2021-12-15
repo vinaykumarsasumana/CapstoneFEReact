@@ -1,0 +1,28 @@
+.CategoryPage {
+  min-height: 90vh;
+  background-color: var(--c5n);
+  display: flex;
+  flex-direction: column;
+}
+.CategoryPage__container {
+  background-color: green;
+}
+.CategoryPage__header {
+  display: flex;
+  flex-direction: row;
+  background-color: var(--c2d);
+  color: white;
+  justify-content: flex-end;
+  align-items: center;
+}
+.CategoryPage__header__filter {
+  margin-left: 8rem;
+  margin-right: 5rem;
+  display: flex;
+  flex-direction: row;
+  color: white;
+  width: 20%;
+  justify-content: space-evenly;
+  justify-self: flex-end;
+  align-items: center;
+}

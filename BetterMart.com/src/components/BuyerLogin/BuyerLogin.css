@@ -1,0 +1,125 @@
+.BuyerLogin {
+  height: 90vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.BuyerLogin__ele1,
+.BuyerLogin__ele2 {
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.BuyerLogin__ele1 {
+  width: 50%;
+}
+.BuyerLogin__ele2 {
+  width: 40%;
+  margin-left: -10rem;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid var(--c2n);
+  border-radius: 15px;
+}
+.BuyerLogin__ele1__img {
+  width: 500px;
+  height: 500px;
+}
+.BuyerLogin__ele2__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+
+  min-width: 95%;
+}
+.BuyerLogin__ele2__form__input {
+  width: 99%;
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  padding: 0.1rem 0.3rem;
+  border: 1px solid grey;
+  border-radius: 3px;
+}
+.BuyerLogin__ele2__form__button {
+  background-color: var(--c2n);
+  padding: 0.2rem 1rem;
+  margin: 0.5rem 0;
+  border-radius: 5px;
+}
+.BuyerLogin__ele2__social {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+
+  width: 30%;
+}
+.BuyerLogin__ele2__social__icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: -0.8rem;
+  /* width: 40%; */
+}
+/*//////////////////////////////////*/
+.BuyerLogin__container {
+  height: 80vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.BuyerLogin__login-form {
+  /* margin-top: 150px; */
+  /* background-color: var(--c3n); */
+  width: 40vw !important;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  /* float: right; */
+}
+.BuyerLogin__login__image {
+  /* margin-top: 40px; */
+  height: 400px !important;
+  width: 400px !important;
+}
+
+.BuyerLogin__form-control-lg {
+  width: 105% !important;
+  padding: 10px;
+  margin-top: 1rem;
+}
+
+.BuyerLogin__image {
+  /* float: left; */
+  width: 50%;
+}
+
+.BuyerLogin__alignright {
+  align-content: center;
+  margin-right: 50px;
+}
+.BuyerLogin__btn__login {
+  margin-right: 50px;
+  margin-top: 1rem;
+  background-color: var(--c2n);
+  border-radius: 5px;
+  padding: 5px 15px;
+  color: white;
+  font-weight: normal;
+  border: none;
+}
+.BuyerLogin__btn__login:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+.BuyerLogin__h6__icon {
+  align-items: center;
+  margin-right: 70px;
+  margin-top: 1rem;
+}
