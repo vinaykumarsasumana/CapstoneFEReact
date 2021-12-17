@@ -87,6 +87,14 @@ function BuyerLogin() {
             Login
           </button>
           <a href="/BuyerRegister">Not Registered?Register here.</a>
+          <a
+            href="/"
+            onClick={() => {
+              window.open("http://localhost:4200/buyer/login", "__blank");
+            }}
+          >
+            Are you a seller?
+          </a>
         </form>
         <div className="BuyerLogin__ele2__social">
           <p>Login with :</p>

@@ -113,7 +113,15 @@ function ProductPage(props) {
         <ShareModal setShowModal={setShowModal} showModal={showModal} />
       ) : null}
       <div className="ProductPage__ele">
-        <ImageCarousel images={productDetails.pictures} />
+        {productDetails.productImages === undefined ||
+        productDetails.productImages.length !== 0 ? (
+          <ImageCarousel images={productDetails.pictures} />
+        ) : (
+          <img
+            src="https://www.cloudfuze.com/wp-content/uploads/2021/04/default-post.jpg"
+            alt=""
+          />
+        )}
       </div>
       <div className="ProductPage__ele" id="ele__details">
         <Container class="d-flex align-items-center">

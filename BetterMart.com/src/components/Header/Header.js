@@ -83,6 +83,7 @@ function Header() {
         setNameResults(result.data);
       });
   };
+
   const selectHandler = (e) => {
     setFilter(e.target.value);
     console.log("filter:", filter);

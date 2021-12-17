@@ -217,6 +217,14 @@ function BuyerRegister(props) {
             Register
           </button>
           <a href="/BuyerLogin">Already Registered?Login here.</a>
+          <a
+            href="/"
+            onClick={() => {
+              window.open("http://localhost:4200/buyer/register", "__blank");
+            }}
+          >
+            Want to register as a seller?
+          </a>
         </form>
         <div className="BuyerRegister__ele2__social">
           <p>Register with :</p>

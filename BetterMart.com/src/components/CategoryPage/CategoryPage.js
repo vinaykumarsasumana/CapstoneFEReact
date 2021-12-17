@@ -70,7 +70,15 @@ function CategoryPage(props) {
             return (
               <Col xs="12" sm="3">
                 <Card style={{ width: "18rem" }}>
-                  <Card.Img variant="top" src={product.imageURL} />
+                  {product.imageURL === null ||
+                  product.imageURL.length === 0 ? (
+                    <Card.Img
+                      variant="top"
+                      src="https://www.cloudfuze.com/wp-content/uploads/2021/04/default-post.jpg"
+                    />
+                  ) : (
+                    <Card.Img variant="top" src={product.imageURL} />
+                  )}
                   <Card.Body>
                     <Card.Title>{product.name}</Card.Title>
                     <Card.Text>{product.price}</Card.Text>
