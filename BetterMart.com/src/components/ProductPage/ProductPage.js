@@ -29,6 +29,7 @@ import ShareModal from "./ShareModal";
 function ProductPage(props) {
   const [showModal, setShowModal] = useState(false);
   const [productDetails, setProductDetails] = useState({});
+  const [productImages, setProductImages] = useState([]);
 
   const { product } = useParams();
 
@@ -38,6 +39,7 @@ function ProductPage(props) {
 
   ///////////////////// USE EFFECT ///////////////////////////
   useEffect(() => {
+    window.scrollTo(0, 0);
     axios
       .get(
         "http://localhost:34365/api/Product/GetProductDetailsByProductName?ProductName=" +
@@ -46,6 +48,15 @@ function ProductPage(props) {
       .then((result) => {
         console.log(result);
         setProductDetails(result.data[0]);
+        axios
+          .get(
+            "http://localhost:34365/api/Product/GetProductImageDetailsByProductId?ProductId=" +
+              result.data[0].productId
+          )
+          .then((results) => {
+            console.log("Images retrieved:", results);
+            setProductImages(results.data);
+          });
       });
   }, []);
 
@@ -113,9 +124,8 @@ function ProductPage(props) {
         <ShareModal setShowModal={setShowModal} showModal={showModal} />
       ) : null}
       <div className="ProductPage__ele">
-        {productDetails.productImages === undefined ||
-        productDetails.productImages.length !== 0 ? (
-          <ImageCarousel images={productDetails.pictures} />
+        {productImages === undefined || productImages.length !== 0 ? (
+          <ImageCarousel images={productImages} />
         ) : (
           <img
             src="https://www.cloudfuze.com/wp-content/uploads/2021/04/default-post.jpg"

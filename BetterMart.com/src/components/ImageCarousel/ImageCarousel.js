@@ -9,6 +9,7 @@ const ImageCarousel = ({ images }) => {
   const carouselItemsRef = useRef([]);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     if (images && images[0]) {
       carouselItemsRef.current = carouselItemsRef.current.slice(
         0,
@@ -26,7 +27,7 @@ const ImageCarousel = ({ images }) => {
       setSelectedImageIndex(newIdx);
       if (carouselItemsRef?.current[newIdx]) {
         carouselItemsRef?.current[newIdx]?.scrollIntoView({
-          inline: "center",
+          inline: "start",
           behavior: "smooth",
         });
       }
@@ -57,7 +58,7 @@ const ImageCarousel = ({ images }) => {
     <div className="carousel-container">
       <div
         className="selected-image"
-        style={{ backgroundImage: `url(${selectedImage?.url})` }}
+        style={{ backgroundImage: `url(${selectedImage?.productImageUrl})` }}
       />
       <div className="carousel">
         <div className="carousel__images">
@@ -65,7 +66,7 @@ const ImageCarousel = ({ images }) => {
             images.map((image, idx) => (
               <div
                 onClick={() => handleSelectedImageChange(idx)}
-                style={{ backgroundImage: `url(${image.url})` }}
+                style={{ backgroundImage: `url(${image.productImageUrl})` }}
                 key={image.id}
                 className={`carousel__image ${
                   selectedImageIndex === idx && "carousel__image-selected"

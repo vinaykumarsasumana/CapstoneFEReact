@@ -30,7 +30,8 @@ function CategoryPage(props) {
           filter
       )
       .then((results) => {
-        setProductData(results.data);
+        console.log(results.data.$values);
+        setProductData(results.data.$values);
       });
   }, [filter, category]);
 
@@ -77,7 +78,10 @@ function CategoryPage(props) {
                       src="https://www.cloudfuze.com/wp-content/uploads/2021/04/default-post.jpg"
                     />
                   ) : (
-                    <Card.Img variant="top" src={product.imageURL} />
+                    <Card.Img
+                      variant="top"
+                      src={product.imageURL.productImageUrl}
+                    />
                   )}
                   <Card.Body>
                     <Card.Title>{product.name}</Card.Title>
