@@ -26,7 +26,7 @@ function MyOrders(props) {
       )
       .then((results) => {
         console.log("Order Details:", results);
-        setOrdersData(results.data);
+        setOrdersData(results.data.$values);
       });
   }, []);
   const tabRow = ordersData.map(function (object, i) {

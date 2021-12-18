@@ -33,7 +33,7 @@ function AccountDetails() {
           email
       )
       .then((result) => {
-        // console.log(result);
+        console.log(result);
         let tempdetails = {
           Id: result.data.buyerRegId,
           FirstName: result.data.firstName,

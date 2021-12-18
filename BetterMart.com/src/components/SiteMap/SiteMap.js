@@ -13,30 +13,6 @@ function SiteMap() {
     window.scrollTo(0, 0);
   }, []);
 
-  //   <Route exact path="/Home" element={<MainBanner />} />
-  //           <Route path="" element={<MainBanner />} />
-  //           <Route path="/CategoryPage/:category" element={<CategoryPage />} />
-  //           <Route path="/ProductPage/:product" element={<ProductPage />} />
-  //           <Route path="/ContactUs" element={<ContactUs />} />
-  //           <Route path="/Cart" element={<Cart />} />
-  //           <Route path="/Checkout" element={<Checkout />} />
-  //           <Route path="/FAQ" element={<FAQApp />} />
-  //           <Route path="/News" element={<News />} />
-  //           <Route path="/AboutUs" element={<AboutUs />} />
-  //           <Route path="/TnC" element={<TNC />} />
-  //           <Route path="/BuyerLogin" element={<BuyerLogin />} />
-  //           <Route path="/BuyerRegister" element={<BuyerRegister />} />
-  //           <Route path="/AccountDetails/:email" element={<AccountDetails />} />
-  //           <Route path="/Wishlist" element={<BuyerWishlist />} />
-  //           <Route path="/MyOrders" element={<MyOrders />} />
-  //           <Route path="/Delivery" element={<Delivery />} />
-  //           <Route path="/ReturnsPolicy" element={<ReturnsPolicy />} />
-  //           <Route path="/Cancellation" element={<Cancellation />} />
-  //           <Route path="/PaymentOpt" element={<PaymentOpt />} />
-  //           <Route path="/Privacy" element={<Privacy />} />
-  //           <Route path="/SiteMap" element={<SiteMap />} />
-  //           <Route path="*" element={<PageNotFound />} />
-
   return (
     <div className="SiteMap">
       <h4

@@ -46,16 +46,16 @@ function ProductPage(props) {
           product
       )
       .then((result) => {
-        console.log(result);
-        setProductDetails(result.data[0]);
+        console.log(result.data);
+        setProductDetails(result.data.$values[0]);
         axios
           .get(
             "http://localhost:34365/api/Product/GetProductImageDetailsByProductId?ProductId=" +
-              result.data[0].productId
+              result.data.$values[0].productId
           )
           .then((results) => {
             console.log("Images retrieved:", results);
-            setProductImages(results.data);
+            setProductImages(results.data.$values);
           });
       });
   }, []);
@@ -75,7 +75,10 @@ function ProductPage(props) {
       deliveryCharge: productDetails.deliveryCharge,
       deliveryTime: productDetails.deliveryTime,
       productQuantity: 1,
-      productImage: "https://picsum.photos/200?random=1",
+      productImage:
+        productImages !== undefined
+          ? productImages[0].productImageUrl
+          : "https://picsum.photos/200?random=8",
     };
 
     axios
@@ -101,7 +104,10 @@ function ProductPage(props) {
       productId: productDetails.productId,
       productName: productDetails.productName,
       productPrice: productDetails.productPrice,
-      oneImage: "https://picsum.photos/200?random=1",
+      oneImage:
+        productImages !== undefined
+          ? productImages[0].productImageUrl
+          : "https://picsum.photos/200?random=8",
       deliveryCharge: productDetails.deliveryCharge,
       deliveryTime: productDetails.deliveryTime,
       productQuantity: 1,
@@ -175,7 +181,14 @@ function ProductPage(props) {
               </Button>
             </Col>
             <Col>
-              <Button variant="secondary">Enquiry</Button>
+              <Button
+                variant="secondary"
+                onClick={() => {
+                  alert("Enquiry has been sent to seller!");
+                }}
+              >
+                Enquiry
+              </Button>
             </Col>
           </Row>
           <Row className="ProductPage__ele__social">

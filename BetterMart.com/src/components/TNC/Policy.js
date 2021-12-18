@@ -5,8 +5,6 @@ const Policy = () => {
   const [agree, setAgree] = useState(false);
 
   const checkboxHandler = () => {
-    // if agree === true, it will be set to false
-    // if agree === false, it will be set to true
     setAgree(!agree);
   };
 
@@ -95,7 +93,6 @@ const Policy = () => {
             </label>
           </div>
 
-          {/* Don't miss the exclamation mark* */}
           <button disabled={!agree} className="TNC__btn" onClick={btnHandler}>
             Continue
           </button>

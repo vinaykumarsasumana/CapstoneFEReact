@@ -32,7 +32,7 @@ function Cart(props) {
         )
         .then((results) => {
           console.log(results);
-          setCartDetails(results.data);
+          setCartDetails(results.data.$values);
         });
     } else {
       alert("Please Login to view cart.");

@@ -49,7 +49,7 @@ function Checkout(props) {
       )
       .then((results) => {
         console.log("cart Details:", results);
-        setCartDetails(results.data);
+        setCartDetails(results.data.$values);
       });
   }, []);
 

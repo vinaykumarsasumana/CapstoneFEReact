@@ -80,7 +80,7 @@ function Header() {
 
       .then((result) => {
         console.log(result);
-        setNameResults(result.data);
+        setNameResults(result.data.$values);
       });
   };
 

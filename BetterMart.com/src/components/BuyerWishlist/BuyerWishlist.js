@@ -25,7 +25,7 @@ function Wishlist(props) {
         //   arr.push(result.data);
         //   setWishlistData(arr);
         // } else
-        setWishlistData(result.data);
+        setWishlistData(result.data.$values);
       });
   }, [update]);
 

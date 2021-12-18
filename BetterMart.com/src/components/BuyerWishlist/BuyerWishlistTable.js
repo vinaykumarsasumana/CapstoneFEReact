@@ -29,7 +29,7 @@ function Table(props) {
   return (
     <tr key={props.obj.wishlistId}>
       <td>
-        <img src={props.obj.oneImage} />
+        <img src={props.obj.oneImage} style={{ width: "100px" }} />
       </td>
       <td>{props.obj.productName}</td>
       <td>{"Rs. " + props.obj.productPrice}</td>
